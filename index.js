@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-const port = 9090 || process.env.PORT
+const port = process.env.PORT || 3000
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
