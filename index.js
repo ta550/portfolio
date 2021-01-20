@@ -9,7 +9,7 @@ const sendmail = require('sendmail')();
 app.use(bodyParser.urlencoded({extended: false}))
 
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'gsmtp',
   auth: {
       user: process.env.EMAIL,
       pass: process.env.PASSWORD
