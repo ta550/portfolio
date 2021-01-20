@@ -7,15 +7,15 @@ const sendmail = require('sendmail')();
 
 
 app.use(bodyParser.urlencoded({extended: false}))
+const fromEmail = "hj6249314@gmail.com" || process.env.EMAIL
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
+let trans = nm.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
-  secure: true, // use SSL,
+  secure: true, // use SSL
   auth: {
-    user: 'hj6249314@gmail.com',
-    pass: 'hamza@786'
+      user: fromEmail,
+      pass: "hamza@786" || process.env.PASSWORD
   }
 });
 
@@ -28,7 +28,7 @@ app.get("/",(req,res)=> {
 app.post("/send/email",(req,res)=> {
     const { name, email, subject, body } = req.body
     var mailOptions = {
-        from: 'hj6249314@gmail.com',
+        from: fromEmail,
         to: 'azeztaimur7@gmail.com',
         subject: subject,
         text: `Name: ${name} \n from: ${email} \n body: ${body}`
