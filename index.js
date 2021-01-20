@@ -10,6 +10,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // use SSL,
   auth: {
     user: 'hj6249314@gmail.com',
     pass: 'hamza@786'
