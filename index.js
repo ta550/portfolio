@@ -8,7 +8,7 @@ const sendmail = require('sendmail')();
 
 app.use(bodyParser.urlencoded({extended: false}))
 
-let trans = nm.createTransport({
+let trans = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true, // use SSL
